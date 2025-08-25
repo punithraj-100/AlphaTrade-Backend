@@ -1,9 +1,9 @@
 const {Schema} = require("mongoose");
 const OrdersSChema = new Schema({
-     name: String,
+    name: String,
+    qty: Number,
     price: Number,
-    percent: Number,
-    isDown: Boolean,
+    mode: String,
      
 
 });
