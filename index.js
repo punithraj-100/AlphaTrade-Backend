@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const HoldingsModel = require('./models/HoldingsModel');
 const { PositionsModel } = require("./models/PositionsModel");
+const {WatchlistModel} = require("./models/WatchlistModel")
 const authRoute = require("./Routes/AuthRoute");
 
 const PORT = process.env.PORT || 3002;
@@ -53,6 +54,16 @@ app.get('/allPositions', async (req, res) => {
     }
 });
 
+app.get('/watchlist', async(req, res)=>{
+  try{
+    let watchlistData = await WatchlistModel.find({});
+    res.json(watchlistData);
+  } catch (error) {
+        res.status(500).json({ message: "Failed to fetch watchList", error });
+    }
+});
+
+
 
 // --- SERVER START & DATABASE CONNECTION ---
 app.listen(PORT, () => {
@@ -61,6 +72,85 @@ app.listen(PORT, () => {
         .then(() => console.log("MongoDB connected successfully."))
         .catch(err => console.error("MongoDB connection error:", err));
 });
+
+
+
+
+
+// app.get("/watchlistData", async(req, res)=>{
+//     const watchlist = [
+//         {
+//           name: "INFY",
+//           price: 1555.45,
+//           percent: "-1.60%",
+//           isDown: true,
+//         },
+//         {
+//           name: "ONGC",
+//           price: 116.8,
+//           percent: "-0.09%",
+//           isDown: true,
+//         },
+//         {
+//           name: "TCS",
+//           price: 3194.8,
+//           percent: "-0.25%",
+//           isDown: true,
+//         },
+//         {
+//           name: "KPITTECH",
+//           price: 266.45,
+//           percent: "3.54%",
+//           isDown: false,
+//         },
+//         {
+//           name: "QUICKHEAL",
+//           price: 308.55,
+//           percent: "-0.15%",
+//           isDown: true,
+//         },
+//         {
+//           name: "WIPRO",
+//           price: 577.75,
+//           percent: "0.32%",
+//           isDown: false,
+//         },
+//         {
+//           name: "M&M",
+//           price: 779.8,
+//           percent: "-0.01%",
+//           isDown: true,
+//         },
+//         {
+//           name: "RELIANCE",
+//           price: 2112.4,
+//           percent: "1.44%",
+//           isDown: false,
+//         },
+//         {
+//           name: "HUL",
+//           price: 512.4,
+//           percent: "1.04%",
+//           isDown: false,
+//         },
+//       ];
+
+      
+//         watchlist.forEach((data)=>{
+//             let watchlistdata = new WatchlistModel({
+//                 name: data.name,
+//                 price: data.price,
+//                 percent: data.percent,
+//                 isDown: data.isDown,
+//             });
+//             watchlistdata.save();
+//         }) ; 
+//         res.send("done!");  
+     
+// });
+
+
+
 
 
 
