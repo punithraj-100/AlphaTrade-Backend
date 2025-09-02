@@ -352,7 +352,8 @@ const cors = require('cors');
 const fetch = require('node-fetch'); 
 const HoldingsModel = require('./models/HoldingsModel');
 const { PositionsModel } = require("./models/PositionsModel");
-const {WatchlistModel} = require("./models/WatchlistModel")
+const {WatchlistModel} = require("./models/WatchlistModel");
+const { OrdersModel } = require("./models/OrdersModel"); 
 const authRoute = require("./Routes/AuthRoute");
 
 const PORT = process.env.PORT || 3002;
@@ -399,6 +400,20 @@ app.get('/watchlist', async(req, res)=>{
   } catch (error) {
         res.status(500).json({ message: "Failed to fetch watchList", error });
     }
+});
+
+//saving newOrder data to DB from dashboard
+app.post("/newOrder", async(req, res)=>{
+
+    let newOrder = new OrdersModel({
+        name: req.body.name,
+        qty: req.body.qty,
+        price: req.body.price,
+        mode: req.body.mode,
+    });
+    newOrder.save();
+    res.send("Order received!");
+    console.log("newOrder data",req.body);
 });
 
 // --- NEW CHATBOT PROXY ROUTE ---
