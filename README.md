@@ -1,4 +1,15 @@
 # 🚀 AlphaTrade - Backend API
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="NodeJS" />
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="ExpressJS" />
+  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render" />
+</p>
+
+<p align="center">
+  The robust and secure backend server powering the AlphaTrade platform.
+</p>
+
 
 ✨ Overview
 This repository contains the backend server for the AlphaTrade application. It is a modern, scalable Node.js and Express server responsible for handling user authentication, managing financial data, serving real-time information, and acting as a secure gateway for third-party services like the Google Gemini API.
@@ -18,19 +29,18 @@ Live API URL: https://alphatrade-backend-1.onrender.com
 
 # 🛠️ Tech Stack
 
-Runtime --->  Node.js
+## 🛠️ Tech Stack  
 
-Framework----> Express.js
+| Category        | Technology                              |
+|-----------------|-----------------------------------------|
+| **Runtime**     | Node.js                                 |
+| **Framework**   | Express.js                              |
+| **Database**    | MongoDB with Mongoose                   |
+| **Authentication** | JWT (`jsonwebtoken`), `bcryptjs`     |
+| **Middleware**  | CORS, Cookie-Parser, Dotenv             |
+| **API Calls**   | node-fetch                              |
+| **Deployment**  | Render                                  |
 
-Database---->  MongoDB with Mongoose
-
-Authentication---> JWT (jsonwebtoken), bcryptjs
-
-Middleware----> CORS, Cookie-Parser, Dotenv
-
-API Calls---> node-fetch
-
-Deployment---> Render
 
  # ⚡Local Setup
 Follow these steps to run the backend locally:  
