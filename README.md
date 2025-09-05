@@ -1,4 +1,4 @@
-🚀 AlphaTrade - Backend API
+# 🚀 AlphaTrade - Backend API
 
 ✨ Overview
 This repository contains the backend server for the AlphaTrade application. It is a modern, scalable Node.js and Express server responsible for handling user authentication, managing financial data, serving real-time information, and acting as a secure gateway for third-party services like the Google Gemini API.
@@ -16,7 +16,7 @@ Live API URL: https://alphatrade-backend-1.onrender.com
 
 🛡️ CORS Protection: Configured with a strict CORS policy to ensure that only authorized frontend applications can access the API.
 
-🛠️ Tech Stack
+# 🛠️ Tech Stack
 
 Runtime --->  Node.js
 
@@ -32,22 +32,20 @@ API Calls---> node-fetch
 
 Deployment---> Render
 
- # Local Setup
-To run this project on your local machine, follow these steps:
+ # ⚡Local Setup
+Follow these steps to run the backend locally:  
 
-Clone the Repository
+1. **Clone the repository**  
+   ```bash
+   git clone <your-backend-repo-url>
+2.Navigate to the project directory
 
-git clone <your-backend-repo-url>
+  cd backend
 
-Navigate to the Project Directory
+3.Install dependencies
 
-cd backend
+  npm install
 
-Install Dependencies
-
-npm install
-
-Create a .env File
 Create a .env file in the root of the backend folder and add the following environment variables. These are crucial for the application to run.
 
 # Your MongoDB Atlas connection string
